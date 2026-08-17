@@ -1,0 +1,1654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Housenibble | Fresh Bakery Products</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #2f355e;
+      --navy-dark: #202542;
+      --gold: #b6a51b;
+      --gold-light: #d0c34b;
+      --cream: #fffdf7;
+      --cream-dark: #f7f4e9;
+      --text: #292929;
+      --muted: #777;
+      --white: #fff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      color: var(--text);
+      background: #fff;
+      line-height: 1.65;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    header {
+      position: absolute;
+      z-index: 100;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 20px 7%;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      color: #fff;
+    }
+
+    .logo {
+      font-family: "Playfair Display", serif;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: .5px;
+    }
+
+    .logo span {
+      color: var(--gold-light);
+    }
+
+    nav {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      font-size: 13px;
+    }
+
+    nav a {
+      opacity: .9;
+      transition: .2s;
+    }
+
+    nav a:hover {
+      opacity: 1;
+      color: var(--gold-light);
+    }
+
+    .header-btn {
+      padding: 9px 18px;
+      border: 1px solid rgba(255,255,255,.55);
+      border-radius: 20px;
+    }
+
+    .header-btn:hover {
+      background: var(--gold);
+      color: #fff;
+      border-color: var(--gold);
+    }
+
+    .menu {
+      display: none;
+      width: 38px;
+      height: 38px;
+      border: 1px solid rgba(255,255,255,.6);
+      border-radius: 6px;
+
+      align-items: center;
+      justify-content: center;
+
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: 680px;
+
+      display: flex;
+      align-items: center;
+
+      position: relative;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(18,25,49,.86),
+          rgba(18,25,49,.45),
+          rgba(18,25,49,.12)
+        ),
+        url("https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
+
+      color: #fff;
+    }
+
+    .hero-content {
+      width: min(1100px, 86%);
+      margin: auto;
+      padding-top: 70px;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--gold-light);
+      margin-bottom: 13px;
+    }
+
+    .hero h1 {
+      max-width: 650px;
+
+      font-family: "Playfair Display", serif;
+      font-size: clamp(45px, 6vw, 74px);
+      line-height: 1.04;
+
+      margin-bottom: 22px;
+    }
+
+    .hero p {
+      max-width: 540px;
+
+      color: #eee;
+      font-size: 16px;
+
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      background: var(--gold);
+      color: #fff;
+
+      border-radius: 25px;
+
+      padding: 13px 26px;
+
+      font-size: 12px;
+      font-weight: 700;
+
+      transition: .25s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      background: var(--gold-light);
+    }
+
+    .hero-badge {
+      margin-top: 55px;
+
+      display: flex;
+      gap: 25px;
+      align-items: center;
+
+      font-size: 11px;
+      color: #eee;
+    }
+
+    .hero-badge span {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--gold-light);
+    }
+
+    /* =========================
+       GENERAL
+    ========================= */
+
+    section {
+      padding: 90px 7%;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-heading h2 {
+      font-family: "Playfair Display", serif;
+
+      font-size: clamp(30px, 4vw, 45px);
+      line-height: 1.15;
+
+      margin-bottom: 12px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+
+      max-width: 600px;
+      margin: auto;
+
+      font-size: 14px;
+    }
+
+    /* =========================
+       ABOUT
+    ========================= */
+
+    .intro {
+      background: var(--cream);
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.05fr;
+      gap: 65px;
+      align-items: center;
+    }
+
+    .intro-images {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .intro-images img {
+      height: 250px;
+      border-radius: 4px;
+    }
+
+    .intro-images img:first-child {
+      margin-top: 28px;
+    }
+
+    .intro-images img:last-child {
+      margin-bottom: 28px;
+    }
+
+    .copy h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 42px;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .copy p {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 18px;
+    }
+
+    .ticks {
+      list-style: none;
+      margin: 25px 0;
+    }
+
+    .ticks li {
+      font-size: 13px;
+      margin: 9px 0;
+      position: relative;
+      padding-left: 25px;
+    }
+
+    .ticks li::before {
+      content: "✓";
+
+      position: absolute;
+      left: 0;
+      top: 2px;
+
+      width: 16px;
+      height: 16px;
+
+      border-radius: 50%;
+
+      background: var(--gold);
+      color: #fff;
+
+      display: grid;
+      place-items: center;
+
+      font-size: 10px;
+      font-weight: bold;
+    }
+
+    /* =========================
+       PRODUCTS
+    ========================= */
+
+    .products {
+      background: #fff;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .product {
+      text-align: center;
+    }
+
+    .product-image {
+      background: var(--cream-dark);
+      padding: 7px;
+      margin-bottom: 15px;
+      overflow: hidden;
+    }
+
+    .product-image img {
+      height: 235px;
+      transition: .4s;
+    }
+
+    .product:hover img {
+      transform: scale(1.04);
+    }
+
+    .product h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 19px;
+      margin-bottom: 4px;
+    }
+
+    .product p {
+      font-size: 12px;
+      color: #888;
+    }
+
+    /* =========================
+       FEATURES
+    ========================= */
+
+    .features {
+      background: #faf9f3;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px 60px;
+    }
+
+    .feature {
+      display: grid;
+      grid-template-columns: 40px 1fr;
+      gap: 15px;
+      padding: 10px 0;
+    }
+
+    .feature-icon {
+      width: 32px;
+      height: 32px;
+
+      border-radius: 50%;
+
+      background: var(--gold);
+      color: #fff;
+
+      display: grid;
+      place-items: center;
+
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .feature h3 {
+      font-size: 15px;
+      margin-bottom: 3px;
+    }
+
+    .feature p {
+      font-size: 12px;
+      color: #777;
+    }
+
+    /* =========================
+       CTA
+    ========================= */
+
+    .cta {
+      padding-top: 20px;
+      padding-bottom: 90px;
+      background: #faf9f3;
+    }
+
+    .cta-box {
+      max-width: 1100px;
+      min-height: 270px;
+
+      margin: auto;
+      padding: 50px 7%;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 30px;
+
+      color: #fff;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(28,35,67,.94),
+          rgba(28,35,67,.60)
+        ),
+        url("https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=1500&q=80")
+        center/cover;
+    }
+
+    .cta h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 38px;
+      line-height: 1.15;
+      margin-bottom: 8px;
+      max-width: 650px;
+    }
+
+    .cta p {
+      font-size: 13px;
+      color: #ddd;
+    }
+
+    /* =========================
+       FAQ
+    ========================= */
+
+    .faq {
+      background: var(--cream);
+    }
+
+    .faq-list {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    details {
+      border-bottom: 1px solid #ddd9c8;
+      padding: 18px 0;
+    }
+
+    summary {
+      cursor: pointer;
+      list-style: none;
+
+      font-family: "Playfair Display", serif;
+      font-size: 18px;
+
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::after {
+      content: "+";
+      font-family: "DM Sans", sans-serif;
+      font-size: 20px;
+      color: var(--gold);
+    }
+
+    details[open] summary::after {
+      content: "−";
+    }
+
+    details p {
+      padding-top: 12px;
+      color: #777;
+      font-size: 13px;
+      max-width: 700px;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      background: var(--navy);
+      color: #fff;
+      padding: 70px 7% 30px;
+    }
+
+    .footer-grid {
+      max-width: 1100px;
+      margin: auto;
+
+      display: grid;
+
+      grid-template-columns:
+        1.5fr 1fr 1.2fr 1fr;
+
+      gap: 45px;
+    }
+
+    footer h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 20px;
+      margin-bottom: 17px;
+    }
+
+    footer p,
+    footer li,
+    footer a {
+      font-size: 12px;
+      color: #d7d7df;
+    }
+
+    footer ul {
+      list-style: none;
+    }
+
+    footer li {
+      margin: 8px 0;
+    }
+
+    footer a:hover {
+      color: var(--gold-light);
+    }
+
+    .footer-email {
+      color: var(--gold-light) !important;
+      word-break: break-word;
+    }
+
+    .footer-bottom {
+      max-width: 1100px;
+
+      margin: 45px auto 0;
+      padding-top: 20px;
+
+      border-top: 1px solid rgba(255,255,255,.14);
+
+      display: flex;
+      justify-content: space-between;
+
+      font-size: 11px;
+      color: #aaaec0;
+    }
+
+    /* =========================
+       LEGAL SECTIONS
+    ========================= */
+
+    .legal-section {
+      background: #fff;
+      padding-top: 70px;
+      padding-bottom: 70px;
+    }
+
+    .legal-content {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .legal-content h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 35px;
+      margin-bottom: 20px;
+    }
+
+    .legal-content h3 {
+      font-size: 17px;
+      margin: 25px 0 8px;
+    }
+
+    .legal-content p,
+    .legal-content li {
+      font-size: 13px;
+      color: #666;
+    }
+
+    .legal-content ul {
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+
+    /* =========================
+       TABLET
+    ========================= */
+
+    @media (max-width: 800px) {
+
+      header {
+        padding: 15px 6%;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .menu {
+        display: flex;
+      }
+
+      .hero {
+        min-height: 620px;
+      }
+
+      .hero-content {
+        width: 88%;
+      }
+
+      section {
+        padding: 65px 6%;
+      }
+
+      .intro-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .intro-images img {
+        height: 210px;
+      }
+
+      .copy h2 {
+        font-size: 34px;
+      }
+
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .product-image img {
+        height: 210px;
+      }
+
+      .feature-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .cta-box {
+        display: block;
+        padding: 40px 8%;
+      }
+
+      .cta .btn {
+        margin-top: 25px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 35px;
+      }
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 480px) {
+
+      .logo {
+        font-size: 21px;
+      }
+
+      .hero {
+        min-height: 600px;
+      }
+
+      .hero h1 {
+        font-size: 43px;
+      }
+
+      .hero p {
+        font-size: 14px;
+      }
+
+      .hero-badge {
+        margin-top: 35px;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .intro-images {
+        gap: 7px;
+      }
+
+      .intro-images img {
+        height: 155px;
+      }
+
+      .product-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+
+      .product-image img {
+        height: 150px;
+      }
+
+      .product h3 {
+        font-size: 16px;
+      }
+
+      .cta h2 {
+        font-size: 30px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-bottom {
+        display: block;
+      }
+
+      .footer-bottom span {
+        display: block;
+        margin-bottom: 6px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       HEADER
+  ========================= -->
+
+  <header>
+
+    <a href="#" class="logo">
+      Housenibble<span>.</span>
+    </a>
+
+    <nav>
+      <a href="#about">About</a>
+      <a href="#products">Products</a>
+      <a href="#why-us">Why Us</a>
+      <a href="#faq">FAQs</a>
+      <a href="#contact" class="header-btn">Contact Us</a>
+    </nav>
+
+    <div class="menu" aria-label="Menu">
+      ☰
+    </div>
+
+  </header>
+
+
+  <main>
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section class="hero">
+
+      <div class="hero-content">
+
+        <div class="eyebrow">
+          Freshly baked • Made with care
+        </div>
+
+        <h1>
+          Delicious Baking Made For Every Occasion
+        </h1>
+
+        <p>
+          From tasty small chops and juicy hot dogs to beautiful
+          cakes and cupcakes, we make delicious treats with
+          quality ingredients and genuine care.
+        </p>
+
+        <a href="#products" class="btn">
+          Explore Our Products
+        </a>
+
+        <div class="hero-badge">
+          <span></span>
+          Quality ingredients
+          <span></span>
+          Freshly prepared
+          <span></span>
+          Made with love
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================= -->
+
+    <section class="intro" id="about">
+
+      <div class="container intro-grid">
+
+        <div class="intro-images">
+
+          <img
+            src="https://images.unsplash.com/photo-1549931319-a545dcf3bc73?auto=format&fit=crop&w=700&q=80"
+            alt="Fresh bakery products"
+          >
+
+          <img
+            src="https://images.unsplash.com/photo-1586444248902-2f64eddc13df?auto=format&fit=crop&w=700&q=80"
+            alt="Freshly prepared bakery food"
+          >
+
+        </div>
+
+
+        <div class="copy">
+
+          <div class="eyebrow">
+            Who we are
+          </div>
+
+          <h2>
+            Good Food, Made With Heart
+          </h2>
+
+          <p>
+            At Housenibble, we believe good food has the power
+            to make ordinary moments special. We create delicious
+            bakery treats that are fresh, enjoyable and made with care.
+          </p>
+
+          <p>
+            Whether you're planning a celebration, feeding your
+            guests or simply craving something delicious, we're here
+            to make every bite memorable.
+          </p>
+
+
+          <ul class="ticks">
+
+            <li>
+              Fresh and carefully prepared products
+            </li>
+
+            <li>
+              Quality ingredients in every recipe
+            </li>
+
+            <li>
+              Delicious options for every occasion
+            </li>
+
+            <li>
+              Friendly and reliable customer service
+            </li>
+
+          </ul>
+
+
+          <a href="#contact" class="btn">
+            Get To Know Us
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         PRODUCTS
+    ========================= -->
+
+    <section class="products" id="products">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div class="eyebrow">
+            Our selection
+          </div>
+
+          <h2>
+            Explore Our Products
+          </h2>
+
+          <p>
+            Delicious favourites made to add something special
+            to your day, celebration or event.
+          </p>
+
+        </div>
+
+
+        <div class="product-grid">
+
+
+          <!-- HOT DOG -->
+
+          <article class="product">
+
+            <div class="product-image">
+
+              <img
+                src="https://images.unsplash.com/photo-1612392062631-94dd858cba88?auto=format&fit=crop&w=700&q=80"
+                alt="Hot dog"
+              >
+
+            </div>
+
+            <h3>
+              Hot Dog
+            </h3>
+
+            <p>
+              Delicious, satisfying and freshly prepared.
+            </p>
+
+          </article>
+
+
+          <!-- SMALL CHOPS -->
+
+          <article class="product">
+
+            <div class="product-image">
+
+              <img
+                src="https://images.unsplash.com/photo-1626196340478-1d8c2c7e6b2e?auto=format&fit=crop&w=700&q=80"
+                alt="Small chops"
+              >
+
+            </div>
+
+            <h3>
+              Small Chops
+            </h3>
+
+            <p>
+              Perfect bites for parties and special occasions.
+            </p>
+
+          </article>
+
+
+          <!-- CAKE -->
+
+          <article class="product">
+
+            <div class="product-image">
+
+              <img
+                src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=700&q=80"
+                alt="Cake"
+              >
+
+            </div>
+
+            <h3>
+              Cake
+            </h3>
+
+            <p>
+              Beautiful cakes made for memorable moments.
+            </p>
+
+          </article>
+
+
+          <!-- CUPCAKE -->
+
+          <article class="product">
+
+            <div class="product-image">
+
+              <img
+                src="https://images.unsplash.com/photo-1587668178277-295251f900ce?auto=format&fit=crop&w=700&q=80"
+                alt="Cup cake"
+              >
+
+            </div>
+
+            <h3>
+              Cup Cake
+            </h3>
+
+            <p>
+              Little treats with plenty of deliciousness.
+            </p>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         FEATURES
+    ========================= -->
+
+    <section class="features" id="why-us">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div class="eyebrow">
+            Our promise
+          </div>
+
+          <h2>
+            Why Choose Housenibble?
+          </h2>
+
+          <p>
+            We put quality, freshness and customer satisfaction
+            at the heart of everything we make.
+          </p>
+
+        </div>
+
+
+        <div class="feature-grid">
+
+
+          <div class="feature">
+
+            <div class="feature-icon">
+              ✓
+            </div>
+
+            <div>
+
+              <h3>
+                Quality First
+              </h3>
+
+              <p>
+                We carefully select our ingredients and
+                pay attention to every detail.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="feature">
+
+            <div class="feature-icon">
+              ★
+            </div>
+
+            <div>
+
+              <h3>
+                Great Taste
+              </h3>
+
+              <p>
+                Every product is prepared to deliver
+                flavour you'll want to enjoy again.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="feature">
+
+            <div class="feature-icon">
+              ♡
+            </div>
+
+            <div>
+
+              <h3>
+                Made With Care
+              </h3>
+
+              <p>
+                We put heart into our preparation so
+                every order feels special.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="feature">
+
+            <div class="feature-icon">
+              +
+            </div>
+
+            <div>
+
+              <h3>
+                Perfect For Any Occasion
+              </h3>
+
+              <p>
+                From everyday treats to parties and
+                celebrations, we've got you covered.
+              </p>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         FAQ
+    ========================= -->
+
+    <section class="faq" id="faq">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div class="eyebrow">
+            Need to know
+          </div>
+
+          <h2>
+            Frequently Asked Questions
+          </h2>
+
+          <p>
+            Here are answers to some common questions
+            about our products and orders.
+          </p>
+
+        </div>
+
+
+        <div class="faq-list">
+
+          <details>
+            <summary>
+              How can I place an order?
+            </summary>
+
+            <p>
+              You can place an enquiry by sending us an email at
+              Housenibble@gmail.com. Tell us what you'd like to
+              order, the quantity and your preferred date.
+            </p>
+          </details>
+
+
+          <details>
+            <summary>
+              Do you accept orders for events?
+            </summary>
+
+            <p>
+              Yes. We welcome orders for birthdays, weddings,
+              parties, corporate events and other special occasions.
+              Please contact us early so we can discuss your needs.
+            </p>
+          </details>
+
+
+          <details>
+            <summary>
+              Can I request a customised cake?
+            </summary>
+
+            <p>
+              Yes. For customised cakes, please send us your
+              preferred design, size, flavour and event date.
+              We'll respond with the available options.
+            </p>
+          </details>
+
+
+          <details>
+            <summary>
+              How far in advance should I order?
+            </summary>
+
+            <p>
+              We recommend placing event and customised orders
+              as early as possible. Availability may depend on
+              the size and details of your order.
+            </p>
+          </details>
+
+
+          <details>
+            <summary>
+              How do I contact Housenibble?
+            </summary>
+
+            <p>
+              You can reach us anytime by email at
+              Housenibble@gmail.com.
+            </p>
+          </details>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         CTA
+    ========================= -->
+
+    <section class="cta" id="contact">
+
+      <div class="cta-box">
+
+        <div>
+
+          <div class="eyebrow">
+            Let's create something delicious
+          </div>
+
+          <h2>
+            Make Your Next Occasion Extra Special
+          </h2>
+
+          <p>
+            Contact us about cakes, cupcakes, small chops,
+            hot dogs and special orders.
+          </p>
+
+        </div>
+
+        <a
+          class="btn"
+          href="mailto:Housenibble@gmail.com?subject=Housenibble%20Enquiry"
+        >
+          Get In Touch
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer>
+
+    <div class="footer-grid">
+
+
+      <div>
+
+        <h3>
+          Housenibble.
+        </h3>
+
+        <p>
+          Delicious bakery treats made with quality ingredients,
+          care and a passion for making every occasion special.
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <h3>
+          Navigation
+        </h3>
+
+        <ul>
+
+          <li>
+            <a href="#about">
+              About Us
+            </a>
+          </li>
+
+          <li>
+            <a href="#products">
+              Our Products
+            </a>
+          </li>
+
+          <li>
+            <a href="#why-us">
+              Why Choose Us
+            </a>
+          </li>
+
+          <li>
+            <a href="#faq">
+              FAQs
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <div>
+
+        <h3>
+          Contact
+        </h3>
+
+        <ul>
+
+          <li>
+            <a
+              class="footer-email"
+              href="mailto:Housenibble@gmail.com"
+            >
+              Housenibble@gmail.com
+            </a>
+          </li>
+
+          <li>
+            Available for enquiries and orders
+          </li>
+
+          <li>
+            We look forward to hearing from you.
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <div>
+
+        <h3>
+          Information
+        </h3>
+
+        <ul>
+
+          <li>
+            <a href="#privacy">
+              Privacy Policy
+            </a>
+          </li>
+
+          <li>
+            <a href="#terms">
+              Terms & Conditions
+            </a>
+          </li>
+
+          <li>
+            <a href="#faq">
+              FAQs
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <span>
+        © 2026 Housenibble. All rights reserved.
+      </span>
+
+      <span>
+        Made with care.
+      </span>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =========================
+       PRIVACY POLICY
+  ========================= -->
+
+  <section class="legal-section" id="privacy">
+
+    <div class="legal-content">
+
+      <div class="eyebrow">
+        Your privacy matters
+      </div>
+
+      <h2>
+        Privacy Policy
+      </h2>
+
+      <p>
+        Housenibble respects your privacy and is committed to
+        protecting the personal information you provide when
+        contacting or ordering from us.
+      </p>
+
+      <h3>
+        Information We Collect
+      </h3>
+
+      <p>
+        When you contact us or make an enquiry, we may receive
+        information such as your name, email address, order details
+        and other information you choose to provide.
+      </p>
+
+      <h3>
+        How We Use Your Information
+      </h3>
+
+      <p>
+        We use your information to respond to enquiries, process
+        orders, communicate with you about your request and provide
+        our services.
+      </p>
+
+      <h3>
+        Your Information
+      </h3>
+
+      <p>
+        We do not sell your personal information. We take reasonable
+        steps to keep information provided to us secure and only use
+        it for legitimate business purposes.
+      </p>
+
+      <h3>
+        Contact
+      </h3>
+
+      <p>
+        If you have questions about this Privacy Policy, please
+        contact us at
+        <a class="footer-email" href="mailto:Housenibble@gmail.com">
+          Housenibble@gmail.com
+        </a>.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       TERMS
+  ========================= -->
+
+  <section class="legal-section" id="terms">
+
+    <div class="legal-content">
+
+      <div class="eyebrow">
+        Our terms
+      </div>
+
+      <h2>
+        Terms & Conditions
+      </h2>
+
+      <p>
+        By placing an order or making an enquiry with Housenibble,
+        you agree to the following general terms.
+      </p>
+
+      <h3>
+        Orders
+      </h3>
+
+      <p>
+        Orders are subject to availability and confirmation.
+        Customised and event orders may require additional notice.
+      </p>
+
+      <h3>
+        Custom Orders
+      </h3>
+
+      <p>
+        Designs, flavours, sizes and other details for customised
+        products should be confirmed before preparation begins.
+        Final availability may depend on the requested design.
+      </p>
+
+      <h3>
+        Changes & Cancellations
+      </h3>
+
+      <p>
+        Please contact us as soon as possible if you need to change
+        or cancel an order. Changes may not be possible once an order
+        has entered preparation.
+      </p>
+
+      <h3>
+        Product Information
+      </h3>
+
+      <p>
+        Product appearance may vary slightly from photographs.
+        Ingredients and product details can also change when necessary.
+        Please contact us if you have specific dietary or ingredient
+        concerns before ordering.
+      </p>
+
+      <h3>
+        Contact
+      </h3>
+
+      <p>
+        For questions about these terms, contact
+        <a class="footer-email" href="mailto:Housenibble@gmail.com">
+          Housenibble@gmail.com
+        </a>.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       MOBILE MENU SCRIPT
+  ========================= -->
+
+  <script>
+
+    const menu = document.querySelector(".menu");
+    const nav = document.querySelector("nav");
+
+    menu.addEventListener("click", () => {
+
+      if (nav.style.display === "flex") {
+        nav.style.display = "none";
+      } else {
+        nav.style.display = "flex";
+
+        nav.style.position = "absolute";
+        nav.style.top = "70px";
+        nav.style.left = "6%";
+        nav.style.right = "6%";
+        nav.style.padding = "22px";
+        nav.style.flexDirection = "column";
+        nav.style.alignItems = "flex-start";
+        nav.style.gap = "18px";
+
+        nav.style.background = "#2f355e";
+        nav.style.borderRadius = "8px";
+      }
+
+    });
+
+
+    // Close mobile menu when a link is clicked
+
+    document.querySelectorAll("nav a").forEach(link => {
+
+      link.addEventListener("click", () => {
+
+        if (window.innerWidth <= 800) {
+          nav.style.display = "none";
+        }
+
+      });
+
+    });
+
+  </script>
+
+</body>
+</html>
